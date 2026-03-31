@@ -111,12 +111,50 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 
 </style>
 
+<style>
+.logo-principal{
+  width: 420px;
+  max-width: 90%;
+  height: auto;
+  display:block;
+  margin: 0 auto 20px auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform: translateY(-20px);} 
+  to{opacity:1; transform: translateY(0);} 
+}
+
+.whatsapp-float{
+position:fixed;
+width:60px;
+height:60px;
+bottom:30px;
+right:30px;
+background:#25d366;
+color:#fff;
+border-radius:50px;
+text-align:center;
+font-size:30px;
+box-shadow:2px 2px 3px #999;
+z-index:100;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+}
+
+.whatsapp-float:hover{
+background:#1ebe5d;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" class="logo" alt="Delta Prime">
+<img src="logo.png" alt="Delta Prime Manutenções Condominiais" class="logo-principal">
 <h1>Delta Prime Manutenções Condominiais LTDA</h1>
 <p>Excelência em cuidar do seu condomínio</p>
 </header>
@@ -197,5 +235,6 @@ Nosso objetivo é oferecer soluções eficientes com segurança, qualidade e pro
 
 <a class="whatsapp" href="https://wa.me/5583998824850">WhatsApp</a>
 
+<a href="https://wa.me/5583998824850" class="whatsapp-float" target="_blank">💬</a>
 </body>
 </html>
