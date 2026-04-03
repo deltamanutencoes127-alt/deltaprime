@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Prime | Manutenção Condominial em João Pessoa</title>
-
-    <link rel="icon" type="image/png" href="logo-icone.png">
     
+    <link rel="icon" type="image/png" href="logo.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-blue: #0b2c5f;
-            --secondary-blue: #061a3a;
-            --accent-gold: #f4b400;
-            --accent-gold-hover: #d89f00;
-            --text-dark: #333;
-            --text-light: #666;
+            --primary: #0b2c5f;
+            --secondary: #061a3a;
+            --accent: #f4b400;
+            --accent-hover: #d89f00;
             --white: #ffffff;
-            --bg-gray: #f4f7f9;
+            --text: #333;
+            --light-bg: #f4f7f9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-gray); color: var(--text-dark); line-height: 1.6; }
+        body { background-color: var(--light-bg); color: var(--text); line-height: 1.6; }
 
-        /* BARRA SUPERIOR */
+        /* TOP BAR */
         .top-bar {
-            background: var(--secondary-blue);
+            background: var(--secondary);
             color: var(--white);
             padding: 8px 5%;
             display: flex;
@@ -36,48 +35,48 @@
             font-size: 0.8rem;
         }
         .top-bar a { color: white; text-decoration: none; transition: 0.3s; }
-        .top-bar a:hover { color: var(--accent-gold); }
-        .top-bar i { color: var(--accent-gold); margin-right: 5px; }
+        .top-bar a:hover { color: var(--accent); }
+        .top-bar i { color: var(--accent); margin-right: 5px; }
 
-        /* HEADER HORIZONTAL COMPACTO */
+        /* HEADER HORIZONTAL */
         header {
             background: var(--white);
             padding: 0 5%;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            height: 90px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 85px; /* Altura controlada para não ocupar a tela */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
         .logo {
-            height: 65px; /* Tamanho proporcional */
+            height: 70px;
             width: auto;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
             gap: 25px;
+            list-style: none;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--primary-blue);
+            color: var(--primary);
             font-weight: 600;
-            text-transform: uppercase;
             font-size: 0.85rem;
+            text-transform: uppercase;
             transition: 0.3s;
         }
 
-        nav a:hover { color: var(--accent-gold); }
+        nav a:hover { color: var(--accent); }
 
         /* BANNER */
         .banner {
-            height: 70vh;
+            height: 75vh;
             background: linear-gradient(rgba(11, 44, 95, 0.8), rgba(11, 44, 95, 0.8)),
                         url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600');
             background-size: cover;
@@ -87,16 +86,16 @@
             justify-content: center;
             text-align: center;
             color: var(--white);
+            padding: 0 20px;
         }
 
-        .banner-text h1 { font-size: 2.8rem; margin-bottom: 10px; font-weight: 700; }
-        .banner-text p { font-size: 1.2rem; margin-bottom: 25px; font-weight: 300; }
+        .banner h1 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; }
+        .banner p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
 
-        /* BOTÕES */
         .btn {
-            background: var(--accent-gold);
-            color: var(--secondary-blue);
-            padding: 12px 35px;
+            background: var(--accent);
+            color: var(--secondary);
+            padding: 14px 35px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 700;
@@ -104,55 +103,71 @@
             display: inline-block;
             border: none;
         }
-        .btn:hover { background: var(--accent-gold-hover); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(244, 180, 0, 0.3); }
+
+        .btn:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(244, 180, 0, 0.3); }
 
         /* SEÇÕES */
-        section { padding: 70px 5%; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.2rem; color: var(--primary-blue); position: relative; padding-bottom: 15px; }
-        .section-header h2::after { content: ''; width: 60px; height: 3px; background: var(--accent-gold); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); position: relative; padding-bottom: 15px; }
+        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
         /* GRID SERVIÇOS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
-        .card { background: var(--white); padding: 40px 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card i { font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 10px; color: var(--primary-blue); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
+        .card { background: var(--white); padding: 40px 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 4px solid transparent; }
+        .card:hover { transform: translateY(-10px); border-bottom-color: var(--accent); }
+        .card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
 
         /* DIFERENCIAIS */
-        .diferenciais { background: var(--primary-blue); color: var(--white); }
-        .diferenciais .section-header h2 { color: var(--white); }
-        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
-        .diff-item i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px; display: block; }
+        .diferenciais { background: var(--primary); color: var(--white); text-align: center; }
+        .diferenciais h2 { color: var(--white); margin-bottom: 50px; }
+        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .diff-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; display: block; }
 
-        /* CONTATO */
-        .contato-container { max-width: 600px; margin: auto; background: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; outline: none; font-size: 1rem; }
+        /* FORMULÁRIO */
+        .contato-wrap { max-width: 600px; margin: auto; background: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
 
         /* FOOTER */
-        footer { background: var(--secondary-blue); color: var(--white); padding: 50px 5% 20px; text-align: center; }
+        footer { background: var(--secondary); color: var(--white); padding: 50px 5% 20px; text-align: center; }
         .footer-logo { height: 60px; margin-bottom: 20px; }
-        .footer-info { margin-bottom: 20px; font-size: 0.9rem; color: #cbd5e0; }
 
         /* WHATSAPP FLOAT */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 2px 4px 15px rgba(0,0,0,0.3); z-index: 1001; text-decoration: none; transition: 0.3s; }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            text-decoration: none;
+            transition: 0.3s;
+        }
         .whatsapp-float:hover { transform: scale(1.1); }
 
         /* RESPONSIVIDADE */
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             header { height: auto; flex-direction: column; padding: 15px; }
-            nav ul { gap: 12px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+            nav ul { gap: 15px; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            .banner h1 { font-size: 2rem; }
             .top-bar { flex-direction: column; align-items: center; gap: 5px; text-align: center; }
-            .banner-text h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div><a href="https://wa.me/558398824850"><i class="fa-solid fa-phone"></i> (83) 998824-8501</a></div>
+        <div><a href="https://wa.me/5583998824850"><i class="fa-solid fa-phone"></i> (83) 9 9882-4850</a></div>
         <div><i class="fa-solid fa-envelope"></i> deltamanutencoes127@gmail.com</div>
-        <div><i class="fa-solid fa-location-dot"></i> João Pessoa e Região Metropolitana</div>
+        <div><i class="fa-solid fa-location-dot"></i> João Pessoa e Região</div>
     </div>
 
     <header>
@@ -168,98 +183,96 @@
     </header>
 
     <section class="banner">
-        <div class="banner-text">
-            <h1>Especialistas em Manutenção Condominial</h1>
-            <p>Atendimento profissional em João Pessoa e Região.</p>
-            <a href="https://wa.me/5583998824850" class="btn"><i class="fa-brands fa-whatsapp"></i> ORÇAMENTO VIA WHATSAPP</a>
+        <div class="banner-content">
+            <h1>Manutenção Condominial Profissional</h1>
+            <p>Atendimento especializado em João Pessoa e Região Metropolitana.</p>
+            <a href="https://wa.me/5583998824850" class="btn"><i class="fa-brands fa-whatsapp"></i> SOLICITAR ORÇAMENTO</a>
         </div>
     </section>
 
-    <section id="sobre" style="background: white; text-align: center;">
-        <div class="section-header">
-            <h2>Delta Prime</h2>
+    <section id="sobre" style="background: #fff; text-align: center;">
+        <div class="section-title">
+            <h2>A Delta Prime</h2>
         </div>
-        <p style="max-width: 800px; margin: auto; font-size: 1.1rem; color: var(--text-light);">
-            Oferecemos soluções completas para condomínios em <strong>João Pessoa e região metropolitana</strong>. 
-            Nossa missão é garantir a valorização do patrimônio e a segurança dos moradores com serviços técnicos de alta qualidade e transparência total.
+        <p style="max-width: 850px; margin: auto; font-size: 1.1rem; color: #555;">
+            Somos referência em soluções prediais integradas. Atuamos com transparência e rigor técnico para valorizar o patrimônio e garantir a segurança de moradores e administradores em toda a grande <strong>João Pessoa</strong>.
         </p>
     </section>
 
     <section id="servicos">
-        <div class="section-header">
-            <h2>Serviços Prediais</h2>
+        <div class="section-title">
+            <h2>Nossos Serviços</h2>
         </div>
         <div class="grid">
             <div class="card">
                 <i class="fa-solid fa-bolt-lightning"></i>
                 <h3>Elétrica</h3>
-                <p>Manutenção preventiva, corretiva e quadros de comando.</p>
+                <p>Manutenção preventiva, quadros de energia e automação predial.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-faucet"></i>
+                <i class="fa-solid fa-faucet-drip"></i>
                 <h3>Hidráulica</h3>
-                <p>Reparos em colunas, caixas d'água e caça-vazamentos.</p>
+                <p>Reparo de vazamentos, bombas d'água e tubulações em geral.</p>
             </div>
             <div class="card">
                 <i class="fa-solid fa-paint-roller"></i>
                 <h3>Pintura</h3>
-                <p>Pintura técnica de fachadas e revitalização de áreas comuns.</p>
+                <p>Revitalização de fachadas e áreas comuns com acabamento premium.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-toolbox"></i>
+                <i class="fa-solid fa-hammer"></i>
                 <h3>Reparos Gerais</h3>
-                <p>Impermeabilização, alvenaria e zeladoria técnica especializada.</p>
+                <p>Impermeabilização, alvenaria e zeladoria técnica qualificada.</p>
             </div>
         </div>
     </section>
 
     <section id="diferenciais" class="diferenciais">
-        <div class="section-header">
-            <h2>Por que a Delta Prime?</h2>
+        <div class="section-title">
+            <h2 style="color: white;">Por que nos escolher?</h2>
         </div>
         <div class="diff-grid">
-            <div class="diff-item" style="text-align: center;">
-                <i class="fa-solid fa-check-double"></i>
-                <h3>Qualidade Paraibana</h3>
-                <p>Conhecemos os desafios do clima e das construções da nossa região.</p>
+            <div class="diff-item">
+                <i class="fa-solid fa-shield-check"></i>
+                <h3>Segurança (NRs)</h3>
+                <p>Equipe treinada em NR-10 e NR-35 para trabalhos em altura.</p>
             </div>
-            <div class="diff-item" style="text-align: center;">
-                <i class="fa-solid fa-user-shield"></i>
-                <h3>Equipe Segura</h3>
-                <p>Todos os colaboradores treinados e equipados com EPIs.</p>
+            <div class="diff-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h3>Agilidade</h3>
+                <p>Cronogramas respeitados e atendimento rápido em João Pessoa.</p>
             </div>
-            <div class="diff-item" style="text-align: center;">
-                <i class="fa-solid fa-handshake"></i>
-                <h3>Prazos Reais</h3>
-                <p>Compromisso com o cronograma aprovado pelo síndico.</p>
+            <div class="diff-item">
+                <i class="fa-solid fa-file-signature"></i>
+                <h3>Garantia</h3>
+                <p>Todos os serviços possuem garantia formal em contrato.</p>
             </div>
         </div>
     </section>
 
     <section id="contato">
-        <div class="section-header">
-            <h2>Solicite seu Orçamento</h2>
-            <p>Retornamos o contato rapidamente.</p>
+        <div class="section-title">
+            <h2>Fale Conosco</h2>
+            <p>Peça uma visita técnica ou orçamento sem compromisso.</p>
         </div>
-        <div class="contato-container">
-            <form action="mailto:deltamanutencoes127@gmail.com" method="post" enctype="text/plain">
+        <div class="contato-wrap">
+            <form action="mailto:deltamanutencoes127@gmail.com" method="POST" enctype="text/plain">
                 <input type="text" placeholder="Seu Nome / Síndico" required>
                 <input type="text" placeholder="Nome do Condomínio / Bairro" required>
-                <input type="email" placeholder="E-mail de Contato" required>
-                <textarea rows="4" placeholder="Descreva os serviços necessários..."></textarea>
-                <button type="submit" class="btn" style="width: 100%;">ENVIAR POR E-MAIL</button>
+                <input type="email" placeholder="Seu E-mail" required>
+                <textarea rows="4" placeholder="Como podemos ajudar o seu prédio?"></textarea>
+                <button type="submit" class="btn" style="width: 100%;">ENVIAR AGORA</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <img src="logo.png" alt="Delta Prime" class="footer-logo">
-        <div class="footer-info">
-            <p><i class="fa-solid fa-envelope"></i> deltamanutencoes127@gmail.com</p>
-            <p><i class="fa-solid fa-phone"></i> (83) 998824-8501</p>
-            <p><i class="fa-solid fa-location-dot"></i> Atendimento em João Pessoa, Cabedelo, Bayeux e Santa Rita.</p>
-        </div>
-        <p style="font-size: 0.75rem; opacity: 0.6;">© 2026 Delta Prime Manutenção Condominial. Todos os direitos reservados. site em construção.</p>
+        <img src="logo.png" alt="Delta Prime Logo" class="footer-logo">
+        <p>Delta Prime Manutenção Condominial</p>
+        <p style="margin-top: 10px; opacity: 0.7; font-size: 0.85rem;">
+            João Pessoa - PB | Cabedelo | Bayeux | Santa Rita<br>
+            © 2026 Todos os direitos reservados.
+        </p>
     </footer>
 
     <a href="https://wa.me/5583998824850" class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
