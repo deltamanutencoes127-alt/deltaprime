@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Prime | Manutenção Condominial</title>
     
-    <link rel="icon" type="image/png" href="https://i.imgur.com/8Yv9GvK.png">
+    <link rel="icon" type="image/png" href="logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -17,7 +17,6 @@
                     colors: {
                         delta: '#001f3f',
                         gold: '#d4af37',
-                        goldHover: '#b8962e',
                     }
                 }
             }
@@ -25,8 +24,7 @@
     </script>
 
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        
+        body { font-family: 'Segoe UI', sans-serif; }
         .hero-section {
             background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), 
                         url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');
@@ -34,17 +32,8 @@
             background-position: center;
             background-attachment: fixed;
         }
-
-        .btn-gold { 
-            background-color: #d4af37; 
-            color: #001f3f; 
-            transition: all 0.3s ease; 
-        }
-        .btn-gold:hover { 
-            background-color: #b8962e; 
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
+        .btn-gold { background-color: #d4af37; color: #001f3f; transition: all 0.3s; }
+        .btn-gold:hover { background-color: #b8962e; transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -52,134 +41,92 @@
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="https://i.imgur.com/8Yv9GvK.png" alt="Delta Prime Logo" class="h-12 md:h-16 w-auto">
+                <img src="logo.png" alt="Delta Prime Logo" class="h-12 md:h-16 w-auto">
             </div>
             <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
-                <a href="#inicio" class="hover:text-gold transition">Início</a>
-                <a href="#sobre" class="hover:text-gold transition">Sobre</a>
-                <a href="#servicos" class="hover:text-gold transition">Serviços</a>
-                <a href="#contato" class="hover:text-gold transition">Contato</a>
+                <a href="#inicio" class="hover:text-gold">Início</a>
+                <a href="#sobre" class="hover:text-gold">Sobre</a>
+                <a href="#servicos" class="hover:text-gold">Serviços</a>
+                <a href="#contato" class="hover:text-gold">Contato</a>
             </nav>
-            <a href="https://wa.me/5583998824850" target="_blank" class="btn-gold px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+            <a href="https://wa.me/5583998824850" class="btn-gold px-5 py-2 rounded-lg font-bold text-xs uppercase">
                 Orçamento Rápido
             </a>
         </div>
     </header>
 
-    <section id="inicio" class="hero-section h-[600px] flex items-center text-white text-center">
+    <section id="inicio" class="hero-section h-[500px] flex items-center text-white text-center">
         <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 uppercase tracking-tight">
-                Excelência em <span class="text-gold">Manutenção Predial</span>
-            </h1>
-            <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">
-                Soluções inteligentes para condomínios em João Pessoa com o rigor técnico que seu patrimônio exige.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-5">
-                <a href="#servicos" class="btn-gold px-10 py-4 rounded-md font-black shadow-xl">
-                    NOSSOS SERVIÇOS
-                </a>
-                <a href="https://wa.me/5583998824850" target="_blank" class="bg-white text-delta px-10 py-4 rounded-md font-black hover:bg-gray-200 transition shadow-xl">
-                    FALAR COM GESTOR
-                </a>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">EXCELÊNCIA EM <span class="text-gold">MANUTENÇÃO PREDIAL</span></h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Soluções inteligentes para condomínios em João Pessoa com rigor técnico e transparência.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#servicos" class="btn-gold px-8 py-4 rounded font-bold">NOSSOS SERVIÇOS</a>
+                <a href="https://wa.me/5583998824850" class="bg-white text-delta px-8 py-4 rounded font-bold hover:bg-gray-200">FALAR COM GESTOR</a>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-delta mb-6">Compromisso com a Valorização do seu Patrimônio</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        A <strong>Delta Prime</strong> nasceu para elevar o padrão de manutenção condominial. Atuamos com uma equipe técnica qualificada para garantir que a infraestrutura do seu prédio funcione sem interrupções, focando em segurança, estética e economia para os condôminos.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center gap-2 text-delta font-bold italic">
-                            <i class="fas fa-check-circle text-gold"></i> Atendimento Ágil
-                        </div>
-                        <div class="flex items-center gap-2 text-delta font-bold italic">
-                            <i class="fas fa-check-circle text-gold"></i> Equipe Certificada
-                        </div>
-                    </div>
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-delta mb-4">Compromisso com seu Patrimônio</h2>
+                <p class="text-gray-600 mb-6">A Delta Prime atua com equipe qualificada para garantir que a infraestrutura do seu condomínio funcione sem interrupções, focando em segurança e valorização predial.</p>
+                <div class="flex gap-4 font-bold text-delta">
+                    <span><i class="fas fa-check text-gold"></i> Atendimento Ágil</span>
+                    <span><i class="fas fa-check text-gold"></i> Equipe Certificada</span>
                 </div>
-                <div class="md:w-1/2 bg-delta p-8 rounded-2xl shadow-2xl">
-                    <h3 class="text-gold text-xl font-bold mb-4">Por que nos escolher?</h3>
-                    <ul class="text-white space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="bg-gold text-delta rounded-full h-6 w-6 flex items-center justify-center shrink-0 font-bold text-sm">1</span>
-                            <p>Relatórios fotográficos detalhados após cada serviço.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="bg-gold text-delta rounded-full h-6 w-6 flex items-center justify-center shrink-0 font-bold text-sm">2</span>
-                            <p>Uso de materiais de primeira linha e normas ABNT.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="bg-gold text-delta rounded-full h-6 w-6 flex items-center justify-center shrink-0 font-bold text-sm">3</span>
-                            <p>Transparência total no orçamento e cronograma de obra.</p>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="md:w-1/2 bg-delta p-8 rounded-xl text-white">
+                <h3 class="text-gold font-bold text-xl mb-4 text-center">Por que nos escolher?</h3>
+                <ul class="space-y-3">
+                    <li><i class="fas fa-star text-gold mr-2"></i> Relatórios fotográficos detalhados.</li>
+                    <li><i class="fas fa-star text-gold mr-2"></i> Uso de materiais de primeira linha.</li>
+                    <li><i class="fas fa-star text-gold mr-2"></i> Transparência total nos cronogramas.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="py-20 bg-white">
+    <section id="servicos" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-2 text-delta uppercase">Nossas Especialidades</h2>
-            <div class="w-20 h-1 bg-gold mx-auto mb-12"></div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
-                    <i class="fas fa-bolt text-5xl text-gold mb-6 group-hover:scale-110 transition"></i>
-                    <h3 class="font-bold text-xl mb-3 text-delta">Elétrica</h3>
-                    <p class="text-gray-500 leading-relaxed">Manutenção de quadros, bombas, iluminação LED e SPDA.</p>
+            <h2 class="text-3xl font-bold mb-12 text-delta">NOSSAS ESPECIALIDADES</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <i class="fas fa-bolt text-4xl text-gold mb-4"></i>
+                    <h3 class="font-bold mb-2">Elétrica</h3>
+                    <p class="text-sm text-gray-500">Quadros, bombas e iluminação LED.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
-                    <i class="fas fa-faucet text-5xl text-gold mb-6 group-hover:scale-110 transition"></i>
-                    <h3 class="font-bold text-xl mb-3 text-delta">Hidráulica</h3>
-                    <p class="text-gray-500 leading-relaxed">Reparos em colunas, barriletes, limpeza de cisternas e infiltrações.</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <i class="fas fa-faucet text-4xl text-gold mb-4"></i>
+                    <h3 class="font-bold mb-2">Hidráulica</h3>
+                    <p class="text-sm text-gray-500">Colunas, barriletes e infiltrações.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
-                    <i class="fas fa-paint-roller text-5xl text-gold mb-6 group-hover:scale-110 transition"></i>
-                    <h3 class="font-bold text-xl mb-3 text-delta">Pintura e Fachada</h3>
-                    <p class="text-gray-500 leading-relaxed">Lavagem técnica, restauração de pastilhas e pintura externa.</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <i class="fas fa-paint-roller text-4xl text-gold mb-4"></i>
+                    <h3 class="font-bold mb-2">Pintura/Fachada</h3>
+                    <p class="text-sm text-gray-500">Restauração e pintura profissional.</p>
                 </div>
-                <div class="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition-all group">
-                    <i class="fas fa-tools text-5xl text-gold mb-6 group-hover:scale-110 transition"></i>
-                    <h3 class="font-bold text-xl mb-3 text-delta">Zeladoria Técnica</h3>
-                    <p class="text-gray-500 leading-relaxed">Pequenos reparos, alvenaria, gesso e manutenção preventiva geral.</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <i class="fas fa-tools text-4xl text-gold mb-4"></i>
+                    <h3 class="font-bold mb-2">Zeladoria</h3>
+                    <p class="text-sm text-gray-500">Reparos gerais e preventiva.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contato" class="bg-delta text-white pt-20 pb-8">
+    <footer id="contato" class="bg-delta text-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8 text-gold uppercase tracking-wide">Solicite uma Visita Técnica</h2>
-            <p class="mb-8 text-gray-300 max-w-xl mx-auto">Atendemos síndicos e administradoras com agilidade e laudos profissionais.</p>
-            
-            <div class="flex flex-col items-center gap-6 mb-16">
-                <a href="https://wa.me/5583998824850" target="_blank" class="btn-gold px-10 py-5 rounded-full text-xl font-black flex items-center">
-                    <i class="fab fa-whatsapp mr-3 text-3xl"></i> (83) 9 9882-4850
-                </a>
-                <div class="text-gray-300">
-                    <p class="flex items-center justify-center gap-2 mb-2">
-                        <i class="fas fa-envelope text-gold"></i> deltamanutencoes127@gmail.com
-                    </p>
-                    <p class="flex items-center justify-center gap-2">
-                        <i class="fas fa-map-marker-alt text-gold"></i> João Pessoa | Cabedelo | Santa Rita
-                    </p>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>© 2026 Delta Prime Manutenções Condominiais LTDA.</p>
-                <p class="mt-4 md:mt-0 italic">Excelência em cada detalhe.</p>
-            </div>
+            <h2 class="text-2xl font-bold mb-6 text-gold">Solicite uma Visita Técnica</h2>
+            <a href="https://wa.me/5583998824850" class="btn-gold px-8 py-3 rounded-full font-bold inline-flex items-center text-lg">
+                <i class="fab fa-whatsapp mr-2"></i> (83) 9 9882-4850
+            </a>
+            <p class="mt-6 text-gray-400 text-sm">deltamanutencoes127@gmail.com</p>
+            <p class="text-gray-500 text-xs mt-8">© 2026 Delta Prime Manutenções Condominiais LTDA.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5583998824850" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-green-600 transition-all z-[100] animate-bounce">
+    <a href="https://wa.me/5583998824850" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
 
