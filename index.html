@@ -20,12 +20,25 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 background:#f5f7fb;
+}
+
+/* SITE EM CONSTRUÇÃO */
+
+.construcao{
+background:#f5b400;
+color:black;
+text-align:center;
+padding:8px;
+font-weight:600;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:1}
+50%{opacity:.6}
+100%{opacity:1}
 }
 
 /* LOADER */
@@ -51,94 +64,72 @@ animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-0%{transform:rotate(0)}
 100%{transform:rotate(360deg)}
 }
 
 /* HEADER */
 
 header{
-position:fixed;
-width:100%;
 background:white;
-z-index:1000;
-transition:.3s;
-}
-
-header.active{
-box-shadow:0 5px 30px rgba(0,0,0,.15);
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:15px;
-}
-
-nav{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-/* LOGO */
-
-.logo{
+padding:25px;
 text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
+
+/* LOGO ANIMADA */
 
 .logo img{
-height:80px;
-margin-bottom:10px;
-}
-
-/* MENU */
-
-.menu{
-display:flex;
-gap:30px;
-}
-
-.menu a{
-text-decoration:none;
-color:#333;
-font-weight:500;
+height:120px;
+animation:logoFade 1.5s ease-in-out, float 4s ease-in-out infinite;
 transition:.3s;
 }
 
-.menu a:hover{
-color:#0a2a66;
+.logo img:hover{
+transform:scale(1.08);
+}
+
+@keyframes logoFade{
+0%{
+opacity:0;
+transform:translateY(-30px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+100%{transform:translateY(0)}
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
+height:85vh;
 background:linear-gradient(rgba(10,42,102,.9),rgba(10,42,102,.9)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-background-position:center;
+background-attachment:fixed;
 display:flex;
 align-items:center;
+justify-content:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:20px;
-animation:fadeUp 1s ease;
-}
-
-.hero p{
-margin-bottom:30px;
-animation:fadeUp 1.3s ease;
+font-size:45px;
+margin-bottom:15px;
 }
 
 .btn{
 background:#f5b400;
 padding:15px 35px;
-border-radius:6px;
+border-radius:5px;
 text-decoration:none;
 color:black;
 font-weight:600;
@@ -146,32 +137,24 @@ transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(0,0,0,.2);
+transform:scale(1.05);
 }
 
 /* SECTION */
 
 section{
-padding:100px 20px;
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 .title{
 text-align:center;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 .title h2{
-font-size:32px;
 color:#0a2a66;
-}
-
-/* SOBRE */
-
-.sobre{
-text-align:center;
-max-width:700px;
-margin:auto;
 }
 
 /* SERVIÇOS */
@@ -186,10 +169,9 @@ gap:25px;
 background:white;
 padding:30px;
 border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+box-shadow:0 10px 25px rgba(0,0,0,.05);
 text-align:center;
 transition:.4s;
-cursor:pointer;
 }
 
 .card:hover{
@@ -203,7 +185,23 @@ color:#0a2a66;
 margin-bottom:15px;
 }
 
-/* FORM */
+/* DIFERENCIAIS */
+
+.diferenciais{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.diferenciais div{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+/* CONTATO */
 
 form{
 max-width:500px;
@@ -226,10 +224,11 @@ color:white;
 border:none;
 border-radius:5px;
 cursor:pointer;
+transition:.3s;
 }
 
 button:hover{
-background:#081f4d;
+transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -251,11 +250,17 @@ background:#25d366;
 color:white;
 padding:18px;
 border-radius:50%;
-font-size:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.2);
+font-size:22px;
+animation:whats 2s infinite;
 }
 
-/* ANIMAÇÕES */
+@keyframes whats{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+/* ANIMAÇÃO SCROLL */
 
 .fade{
 opacity:0;
@@ -268,43 +273,15 @@ opacity:1;
 transform:translateY(0);
 }
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.menu{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.logo img{
-height:60px;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-}
-
 </style>
 
 </head>
 
 <body>
 
-<!-- LOADER -->
+<div class="construcao">
+🚧 Site em Construção 🚧
+</div>
 
 <div id="loader">
 <div class="spinner"></div>
@@ -312,36 +289,19 @@ font-size:32px;
 
 <header>
 
-<div class="container">
-
-<nav>
-
 <div class="logo">
-<img src="logo.png" alt="Delta Prime">
-</div>
-
-<div class="menu">
-
-<a href="#">Inicio</a>
-<a href="#sobre">Sobre</a>
-<a href="#servicos">Serviços</a>
-<a href="#contato">Contato</a>
-
-</div>
-
-</nav>
-
+<img src="logo.png">
 </div>
 
 </header>
 
 <section class="hero">
 
-<div class="container">
+<div>
 
-<h1>Manutenção Predial Profissional</h1>
+<h1>Manutenção Condominial Profissional</h1>
 
-<p>Seu condomínio seguro e valorizado</p>
+<p>Excelência em cada detalhe</p>
 
 <a href="#contato" class="btn">Solicitar Orçamento</a>
 
@@ -349,33 +309,10 @@ font-size:32px;
 
 </section>
 
-<section id="sobre" class="fade">
-
-<div class="container">
+<section class="fade">
 
 <div class="title">
-<h2>Sobre</h2>
-</div>
-
-<div class="sobre">
-
-<p>
-A Delta Prime atua com excelência em manutenção predial,
-oferecendo soluções completas para condomínios e empresas.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="servicos" class="fade">
-
-<div class="container">
-
-<div class="title">
-<h2>Serviços</h2>
+<h2>Nossos Serviços</h2>
 </div>
 
 <div class="services">
@@ -383,23 +320,25 @@ oferecendo soluções completas para condomínios e empresas.
 <div class="card">
 <i class="fas fa-bolt"></i>
 <h3>Elétrica</h3>
+<p>Manutenção elétrica completa.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-faucet"></i>
 <h3>Hidráulica</h3>
+<p>Reparos e manutenção.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-paint-roller"></i>
 <h3>Pintura</h3>
+<p>Pintura predial.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-tools"></i>
 <h3>Manutenção</h3>
-</div>
-
+<p>Serviços gerais.</p>
 </div>
 
 </div>
@@ -407,8 +346,6 @@ oferecendo soluções completas para condomínios e empresas.
 </section>
 
 <section id="contato" class="fade">
-
-<div class="container">
 
 <div class="title">
 <h2>Contato</h2>
@@ -423,8 +360,6 @@ oferecendo soluções completas para condomínios e empresas.
 <button type="submit">Enviar</button>
 
 </form>
-
-</div>
 
 </section>
 
@@ -442,27 +377,18 @@ oferecendo soluções completas para condomínios e empresas.
 
 <script>
 
-window.addEventListener("load", function(){
+window.addEventListener("load",()=>{
 document.getElementById("loader").style.display="none"
 })
 
-window.addEventListener("scroll", function(){
-let header = document.querySelector("header")
-header.classList.toggle("active", window.scrollY > 50)
-})
+const fade=document.querySelectorAll(".fade")
 
-const fade = document.querySelectorAll('.fade')
-
-window.addEventListener('scroll', ()=>{
+window.addEventListener("scroll",()=>{
 
 fade.forEach(el=>{
-
-const top = el.getBoundingClientRect().top
-
-if(top < window.innerHeight - 100){
-el.classList.add('active')
+if(el.getBoundingClientRect().top < window.innerHeight-100){
+el.classList.add("active")
 }
-
 })
 
 })
@@ -471,11 +397,11 @@ function enviarWhats(e){
 
 e.preventDefault()
 
-let nome = document.getElementById("nome").value
-let email = document.getElementById("email").value
-let mensagem = document.getElementById("mensagem").value
+let nome=document.getElementById("nome").value
+let email=document.getElementById("email").value
+let mensagem=document.getElementById("mensagem").value
 
-let texto = `Olá, me chamo ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`
+let texto=`Olá, me chamo ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`
 
 window.open(`https://wa.me/5583998824850?text=${texto}`)
 
