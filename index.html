@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
 <meta charset="UTF-8">
@@ -19,6 +20,10 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#f5f7fb;
 }
@@ -29,8 +34,12 @@ header{
 position:fixed;
 width:100%;
 background:white;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
 z-index:1000;
+transition:.3s;
+}
+
+header.active{
+box-shadow:0 5px 30px rgba(0,0,0,.15);
 }
 
 .container{
@@ -51,6 +60,7 @@ align-items:center;
 gap:10px;
 font-weight:600;
 font-size:20px;
+color:#0a2a66;
 }
 
 .logo img{
@@ -90,11 +100,15 @@ color:white;
 .hero h1{
 font-size:48px;
 margin-bottom:20px;
+animation:fadeUp 1s ease;
 }
 
 .hero p{
 margin-bottom:30px;
+animation:fadeUp 1.3s ease;
 }
+
+/* BOTÃO */
 
 .btn{
 background:#f5b400;
@@ -103,6 +117,14 @@ border-radius:6px;
 text-decoration:none;
 color:black;
 font-weight:600;
+transition:.3s;
+display:inline-block;
+animation:fadeUp 1.6s ease;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,.2);
 }
 
 /* SECTION */
@@ -143,35 +165,37 @@ padding:30px;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,.05);
 text-align:center;
-transition:.3s;
+transition:.4s;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,#0a2a66,transparent);
+top:0;
+left:-100%;
+transition:.6s;
+opacity:.1;
+}
+
+.card:hover::before{
+left:100%;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
 }
 
 .card i{
 font-size:35px;
 color:#0a2a66;
 margin-bottom:15px;
-}
-
-/* PORTFOLIO */
-
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.portfolio img{
-width:100%;
-border-radius:10px;
-transition:.4s;
-}
-
-.portfolio img:hover{
-transform:scale(1.05);
 }
 
 /* FORM */
@@ -197,6 +221,11 @@ color:white;
 border:none;
 border-radius:5px;
 cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#081f4d;
 }
 
 /* FOOTER */
@@ -219,9 +248,10 @@ color:white;
 padding:18px;
 border-radius:50%;
 font-size:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.2);
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÕES */
 
 .fade{
 opacity:0;
@@ -232,6 +262,17 @@ transition:1s;
 .fade.active{
 opacity:1;
 transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* RESPONSIVO */
@@ -270,7 +311,6 @@ Delta Prime
 <a href="#">Inicio</a>
 <a href="#sobre">Sobre</a>
 <a href="#servicos">Serviços</a>
-<a href="#portfolio">Portfólio</a>
 <a href="#contato">Contato</a>
 
 </div>
@@ -352,26 +392,6 @@ oferecendo soluções completas para condomínios e empresas.
 
 </section>
 
-<section id="portfolio" class="fade">
-
-<div class="container">
-
-<div class="title">
-<h2>Portfólio</h2>
-</div>
-
-<div class="portfolio">
-
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-<img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
-<img src="https://images.unsplash.com/photo-1497366216548-37526070297c">
-
-</div>
-
-</div>
-
-</section>
-
 <section id="contato" class="fade">
 
 <div class="container">
@@ -407,6 +427,14 @@ oferecendo soluções completas para condomínios e empresas.
 </a>
 
 <script>
+
+window.addEventListener("scroll", function(){
+
+let header = document.querySelector("header")
+
+header.classList.toggle("active", window.scrollY > 50)
+
+})
 
 const fade = document.querySelectorAll('.fade')
 
