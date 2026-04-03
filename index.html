@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Delta Prime</title>
+<title>Delta Prime | Manutenção Condominial</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -17,54 +14,22 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'Poppins', sans-serif;
 }
 
 body{
-background:#f5f7fb;
+background:#f5f7fa;
+color:#333;
 }
 
 /* SITE EM CONSTRUÇÃO */
 
-.construcao{
-background:#f5b400;
-color:black;
+.construction{
+background:#f4b400;
+color:#000;
 text-align:center;
-padding:8px;
+padding:10px;
 font-weight:600;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:1}
-50%{opacity:.6}
-100%{opacity:1}
-}
-
-/* LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:white;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.spinner{
-width:70px;
-height:70px;
-border:6px solid #eee;
-border-top:6px solid #0a2a66;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg)}
 }
 
 /* HEADER */
@@ -73,204 +38,171 @@ header{
 background:white;
 padding:25px;
 text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
+box-shadow:0 3px 15px rgba(0,0,0,0.08);
 }
 
-/* LOGO ANIMADA */
-
-.logo img{
-height:120px;
-animation:logoFade 1.5s ease-in-out, float 4s ease-in-out infinite;
-transition:.3s;
+.logo{
+width:260px;
+animation: flutuar 3s ease-in-out infinite;
 }
 
-.logo img:hover{
-transform:scale(1.08);
+@keyframes flutuar{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0px)}
 }
 
-@keyframes logoFade{
-0%{
-opacity:0;
-transform:translateY(-30px);
-}
-100%{
-opacity:1;
-transform:translateY(0);
-}
-}
+/* BANNER */
 
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-100%{transform:translateY(0)}
-}
-
-/* HERO */
-
-.hero{
-height:85vh;
-background:linear-gradient(rgba(10,42,102,.9),rgba(10,42,102,.9)),
+.banner{
+height:500px;
+background:linear-gradient(rgba(0,38,85,.9),rgba(0,38,85,.9)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-background-attachment:fixed;
+background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-padding:20px;
 }
 
-.hero h1{
+.banner h1{
 font-size:45px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .btn{
-background:#f5b400;
+background:#f4b400;
 padding:15px 35px;
-border-radius:5px;
-text-decoration:none;
 color:black;
+text-decoration:none;
+border-radius:6px;
 font-weight:600;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.05);
+background:#d89f00;
 }
 
-/* SECTION */
+/* SOBRE */
 
-section{
+.sobre{
 padding:80px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.title{
 text-align:center;
-margin-bottom:40px;
+background:white;
 }
 
-.title h2{
-color:#0a2a66;
+.sobre h2{
+font-size:32px;
+margin-bottom:20px;
+color:#0b2c5f;
+}
+
+.sobre p{
+max-width:800px;
+margin:auto;
+line-height:1.7;
 }
 
 /* SERVIÇOS */
 
-.services{
+.servicos{
+padding:80px 20px;
+text-align:center;
+}
+
+.servicos h2{
+font-size:32px;
+margin-bottom:40px;
+color:#0b2c5f;
+}
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:30px;
+max-width:1100px;
+margin:auto;
 }
 
 .card{
 background:white;
 padding:30px;
 border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-text-align:center;
-transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,.15);
 }
 
-.card i{
-font-size:35px;
-color:#0a2a66;
-margin-bottom:15px;
+.card h3{
+margin-bottom:10px;
+color:#0b2c5f;
 }
 
 /* DIFERENCIAIS */
 
 .diferenciais{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+background:#0b2c5f;
+color:white;
+padding:80px 20px;
 text-align:center;
 }
 
-.diferenciais div{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
+.diferenciais h2{
+margin-bottom:40px;
+}
+
+.diferenciais .grid{
+max-width:1000px;
 }
 
 /* CONTATO */
 
+.contato{
+padding:80px 20px;
+text-align:center;
+background:white;
+}
+
 form{
 max-width:500px;
 margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
 }
 
-input,textarea{
+input, textarea{
+width:100%;
 padding:15px;
-border-radius:5px;
-border:1px solid #ddd;
-}
-
-button{
-padding:15px;
-background:#0a2a66;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.05);
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
 /* FOOTER */
 
 footer{
-background:#0a2a66;
+background:#0b2c5f;
 color:white;
 text-align:center;
-padding:40px;
+padding:30px;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
+bottom:20px;
 background:#25d366;
 color:white;
-padding:18px;
+padding:15px;
 border-radius:50%;
-font-size:22px;
-animation:whats 2s infinite;
-}
-
-@keyframes whats{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
-}
-
-/* ANIMAÇÃO SCROLL */
-
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.fade.active{
-opacity:1;
-transform:translateY(0);
+font-size:25px;
+text-decoration:none;
 }
 
 </style>
@@ -279,85 +211,95 @@ transform:translateY(0);
 
 <body>
 
-<div class="construcao">
+<div class="construction">
 🚧 Site em Construção 🚧
 </div>
 
-<div id="loader">
-<div class="spinner"></div>
-</div>
-
 <header>
-
-<div class="logo">
-<img src="logo.png">
-</div>
-
+<img src="logo.png" class="logo">
 </header>
 
-<section class="hero">
+<section class="banner">
+<div>
+<h1>Manutenção Condominial Profissional</h1>
+<a href="#contato" class="btn">Solicitar Orçamento</a>
+</div>
+</section>
+
+<section class="sobre">
+<h2>Sobre a Delta Prime</h2>
+<p>
+A Delta Prime é especializada em manutenção condominial, oferecendo serviços
+com qualidade, segurança e agilidade. Nossa equipe é qualificada para atender
+condomínios residenciais e comerciais com excelência.
+</p>
+</section>
+
+<section class="servicos">
+<h2>Nossos Serviços</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Elétrica</h3>
+<p>Manutenção elétrica preventiva e corretiva.</p>
+</div>
+
+<div class="card">
+<h3>Hidráulica</h3>
+<p>Reparos hidráulicos e manutenção predial.</p>
+</div>
+
+<div class="card">
+<h3>Pintura</h3>
+<p>Pintura interna e externa predial.</p>
+</div>
+
+<div class="card">
+<h3>Manutenção Geral</h3>
+<p>Serviços completos para condomínios.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="diferenciais">
+
+<h2>Diferenciais</h2>
+
+<div class="grid">
 
 <div>
+<h3>Equipe Qualificada</h3>
+<p>Profissionais especializados</p>
+</div>
 
-<h1>Manutenção Condominial Profissional</h1>
+<div>
+<h3>Atendimento Rápido</h3>
+<p>Agilidade nos serviços</p>
+</div>
 
+<div>
+<h3>Qualidade Garantida</h3>
 <p>Excelência em cada detalhe</p>
-
-<a href="#contato" class="btn">Solicitar Orçamento</a>
-
-</div>
-
-</section>
-
-<section class="fade">
-
-<div class="title">
-<h2>Nossos Serviços</h2>
-</div>
-
-<div class="services">
-
-<div class="card">
-<i class="fas fa-bolt"></i>
-<h3>Elétrica</h3>
-<p>Manutenção elétrica completa.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-faucet"></i>
-<h3>Hidráulica</h3>
-<p>Reparos e manutenção.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-paint-roller"></i>
-<h3>Pintura</h3>
-<p>Pintura predial.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-tools"></i>
-<h3>Manutenção</h3>
-<p>Serviços gerais.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="contato" class="fade">
+<section class="contato" id="contato">
 
-<div class="title">
 <h2>Contato</h2>
-</div>
 
-<form onsubmit="enviarWhats(event)">
+<form>
 
-<input type="text" placeholder="Nome" id="nome" required>
-<input type="email" placeholder="Email" id="email" required>
-<textarea placeholder="Mensagem" id="mensagem" required></textarea>
+<input type="text" placeholder="Nome">
+<input type="email" placeholder="Email">
+<textarea placeholder="Mensagem"></textarea>
 
-<button type="submit">Enviar</button>
+<button class="btn">Enviar</button>
 
 </form>
 
@@ -365,49 +307,13 @@ transform:translateY(0);
 
 <footer>
 
-<img src="logo.png" height="50">
+<img src="logo.png" width="100">
 
 <p>© 2026 Delta Prime</p>
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5583998824850">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-
-window.addEventListener("load",()=>{
-document.getElementById("loader").style.display="none"
-})
-
-const fade=document.querySelectorAll(".fade")
-
-window.addEventListener("scroll",()=>{
-
-fade.forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight-100){
-el.classList.add("active")
-}
-})
-
-})
-
-function enviarWhats(e){
-
-e.preventDefault()
-
-let nome=document.getElementById("nome").value
-let email=document.getElementById("email").value
-let mensagem=document.getElementById("mensagem").value
-
-let texto=`Olá, me chamo ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`
-
-window.open(`https://wa.me/5583998824850?text=${texto}`)
-
-}
-
-</script>
+<a class="whatsapp" href="https://wa.me/5511999999999">💬</a>
 
 </body>
 
