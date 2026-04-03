@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Delta Prime Manutenções</title>
-
-<meta name="description" content="Delta Prime - Especialistas em manutenção predial e condomínios">
-<meta name="keywords" content="manutenção predial, elétrica, hidráulica, pintura, condomínios">
-
-<link rel="icon" href="logo.png">
+<title>Delta Prime</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -24,7 +21,35 @@ font-family:'Poppins',sans-serif;
 
 body{
 background:#f5f7fa;
-color:#333;
+}
+
+/* LOADER */
+
+.loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:#0a2a66;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+z-index:9999;
+}
+
+.spinner{
+border:4px solid rgba(255,255,255,.2);
+border-top:4px solid #f5b400;
+border-radius:50%;
+width:40px;
+height:40px;
+animation:spin 1s linear infinite;
+margin-top:20px;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg)}
 }
 
 /* MENU */
@@ -32,9 +57,8 @@ color:#333;
 header{
 position:fixed;
 width:100%;
-top:0;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 2px 10px rgba(0,0,0,.05);
 z-index:1000;
 }
 
@@ -56,62 +80,52 @@ font-weight:600;
 color:#0a2a66;
 }
 
+/* MENU MOBILE */
+
+.menu{
+display:flex;
+}
+
 .menu a{
 margin-left:30px;
 text-decoration:none;
 color:#333;
-font-weight:500;
-transition:.3s;
 }
 
-.menu a:hover{
-color:#0a2a66;
+.menu-btn{
+display:none;
+font-size:25px;
+cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(10,42,102,.85),rgba(10,42,102,.85)),
+background:linear-gradient(rgba(10,42,102,.8),rgba(10,42,102,.8)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-background-position:center;
 display:flex;
 align-items:center;
-color:white;
 text-align:center;
-}
-
-.hero-content{
-max-width:800px;
-margin:auto;
+color:white;
 }
 
 .hero h1{
-font-size:42px;
+font-size:45px;
 margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:30px;
 }
 
 .btn{
 background:#f5b400;
-color:black;
 padding:15px 30px;
 border-radius:5px;
 text-decoration:none;
+color:black;
 font-weight:600;
-transition:.3s;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-}
-
-/* SOBRE */
+/* SEÇÕES */
 
 section{
 padding:80px 20px;
@@ -119,12 +133,18 @@ padding:80px 20px;
 
 .title{
 text-align:center;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
-.title h2{
-font-size:32px;
-color:#0a2a66;
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.active{
+opacity:1;
+transform:translateY(0);
 }
 
 /* SERVIÇOS */
@@ -132,23 +152,14 @@ color:#0a2a66;
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+gap:20px;
 }
 
 .card{
 background:white;
 padding:30px;
 border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h3{
-margin-bottom:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
 /* PORTFOLIO */
@@ -164,11 +175,31 @@ width:100%;
 border-radius:10px;
 }
 
-/* CONTATO */
+/* FORM */
 
-.contact{
-text-align:center;
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
+
+input,textarea{
+padding:15px;
+border-radius:5px;
+border:1px solid #ddd;
+}
+
+button{
+padding:15px;
+background:#0a2a66;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+/* FOOTER */
 
 footer{
 background:#0a2a66;
@@ -187,9 +218,32 @@ background:#25d366;
 color:white;
 padding:15px;
 border-radius:50%;
-font-size:24px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.menu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+display:none;
+}
+
+.menu a{
+padding:15px;
+margin:0;
+border-bottom:1px solid #eee;
+}
+
+.menu-btn{
+display:block;
+}
+
 }
 
 </style>
@@ -198,12 +252,26 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 
 <body>
 
+<div class="loader" id="loader">
+
+<h1>Delta Prime</h1>
+<p>Site em construção</p>
+
+<div class="spinner"></div>
+
+</div>
+
 <header>
+
 <div class="container">
+
 <nav>
+
 <div class="logo">Delta Prime</div>
 
-<div class="menu">
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
 <a href="#">Inicio</a>
 <a href="#sobre">Sobre</a>
 <a href="#servicos">Serviços</a>
@@ -212,64 +280,65 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 </div>
 
 </nav>
+
 </div>
+
 </header>
 
 <section class="hero">
 
-<div class="hero-content">
-<h1>Especialistas em Manutenção Predial</h1>
-<p>Seu condomínio seguro, valorizado e funcionando perfeitamente.</p>
+<div class="container">
+
+<h1>Manutenção Predial Profissional</h1>
+
+<p>Seu condomínio seguro e valorizado</p>
+
 <a href="#contato" class="btn">Solicitar Orçamento</a>
+
 </div>
 
 </section>
 
-<section id="sobre">
+<section id="sobre" class="fade">
 
 <div class="container">
 
 <div class="title">
-<h2>Sobre a Empresa</h2>
+<h2>Sobre</h2>
 </div>
 
-<p style="text-align:center; max-width:700px; margin:auto;">
-A Delta Prime atua com excelência em manutenção predial,
-oferecendo soluções rápidas, seguras e eficientes.
+<p style="text-align:center">
+A Delta Prime atua com excelência em manutenção predial.
 </p>
 
 </div>
 
 </section>
 
-<section id="servicos">
+<section id="servicos" class="fade">
 
 <div class="container">
 
 <div class="title">
-<h2>Nossos Serviços</h2>
+<h2>Serviços</h2>
 </div>
 
 <div class="services">
 
 <div class="card">
 <h3>Elétrica</h3>
-<p>Diagnóstico e manutenção elétrica</p>
 </div>
 
 <div class="card">
 <h3>Hidráulica</h3>
-<p>Reparos e vazamentos</p>
 </div>
 
 <div class="card">
 <h3>Pintura</h3>
-<p>Acabamento profissional</p>
 </div>
 
 <div class="card">
-<h3>Manutenção Geral</h3>
-<p>Serviços prediais completos</p>
+<h3>Manutenção</h3>
 </div>
 
 </div>
@@ -278,7 +347,7 @@ oferecendo soluções rápidas, seguras e eficientes.
 
 </section>
 
-<section id="portfolio">
+<section id="portfolio" class="fade">
 
 <div class="container">
 
@@ -289,7 +358,9 @@ oferecendo soluções rápidas, seguras e eficientes.
 <div class="portfolio">
 
 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+
 <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
+
 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c">
 
 </div>
@@ -298,16 +369,25 @@ oferecendo soluções rápidas, seguras e eficientes.
 
 </section>
 
-<section id="contato">
+<section id="contato" class="fade">
 
-<div class="container contact">
+<div class="container">
 
 <div class="title">
 <h2>Contato</h2>
 </div>
 
-<p>Telefone: (83) 99882-4850</p>
-<p>Email: deltamanutencoes127@gmail.com</p>
+<form>
+
+<input type="text" placeholder="Nome">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Mensagem"></textarea>
+
+<button>Enviar</button>
+
+</form>
 
 </div>
 
@@ -315,11 +395,43 @@ oferecendo soluções rápidas, seguras e eficientes.
 
 <footer>
 
-© 2026 Delta Prime Manutenções LTDA
+© 2026 Delta Prime
 
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5583998824850">💬</a>
 
+<script>
+
+window.onload = function(){
+setTimeout(()=>{
+document.getElementById("loader").style.display="none"
+},1500)
+}
+
+function toggleMenu(){
+const menu = document.getElementById("menu")
+menu.style.display = menu.style.display === "flex" ? "none" : "flex"
+}
+
+const fade = document.querySelectorAll('.fade')
+
+window.addEventListener('scroll', ()=>{
+
+fade.forEach(el=>{
+
+const top = el.getBoundingClientRect().top
+
+if(top < window.innerHeight - 100){
+el.classList.add('active')
+}
+
+})
+
+})
+
+</script>
+
 </body>
+
 </html>
