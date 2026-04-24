@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Prime | Manutenção Predial e Condominial em João Pessoa</title>
-    <meta name="description" content="Especialista em manutenção de condomínios em João Pessoa. Serviços de elétrica, hidráulica, pintura de fachada e zeladoria com rigor técnico e transparência.">
-    <meta name="keywords" content="manutenção predial joão pessoa, manutenção de condomínios PB, reforma de fachada, elétrica predial, hidráulica para condomínios, Delta Prime Manutenções">
+    
+    <meta name="description" content="Especialista em manutenção de condomínios em João Pessoa. Serviços de elétrica, hidráulica, pintura de fachada e zeladoria com rigor técnico.">
+    <meta name="keywords" content="manutenção predial joão pessoa, manutenção de condomínios PB, reforma de fachada, elétrica predial, Delta Prime">
     <meta name="author" content="Delta Prime">
     <meta name="robots" content="index, follow">
+    
     <meta property="og:title" content="Delta Prime | Manutenção Predial em João Pessoa">
     <meta property="og:description" content="Soluções inteligentes para condomínios com o rigor técnico que seu patrimônio exige.">
     <meta property="og:url" content="https://deltamanutencoes127-alt.github.io/deltaprime/">
     <meta property="og:type" content="website">
-    <!-- Font Awesome -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         /* ============================================
            RESET & BASE
@@ -48,32 +51,27 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
-        /* ============================================
-           VARIABLES
-           ============================================ */
         :root {
             --delta: #001f3f;
             --gold: #d4af37;
             --gold-hover: #b8962e;
             --white: #ffffff;
             --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
             --gray-300: #d1d5db;
             --gray-500: #6b7280;
             --gray-600: #4b5563;
-            --gray-800: #1f2937;
             --green-500: #22c55e;
             --green-600: #16a34a;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
         }
 
         /* ============================================
-           UTILITY CLASSES
+           UTILITY CLASSES & ANIMATIONS
            ============================================ */
         .container {
             max-width: 1200px;
@@ -92,14 +90,14 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            border: none;
             cursor: pointer;
+            border: none;
         }
 
         .btn-gold:hover {
             background-color: var(--gold-hover);
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
         }
 
         .btn-white {
@@ -114,104 +112,29 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             border: 2px solid var(--white);
-            cursor: pointer;
         }
 
         .btn-white:hover {
             background-color: transparent;
             color: var(--white);
-            transform: scale(1.05);
+        }
+
+        /* Scroll Reveal System */
+        .scroll-reveal, .scroll-reveal-left, .scroll-reveal-right {
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal { transform: translateY(30px); }
+        .scroll-reveal-left { transform: translateX(-30px); }
+        .scroll-reveal-right { transform: translateX(30px); }
+
+        .revealed {
+            opacity: 1;
+            transform: translate(0, 0);
         }
 
         /* ============================================
-           ANIMATIONS
-           ============================================ */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-        }
-
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-reveal-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-
-        .scroll-reveal-left.revealed {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scroll-reveal-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-
-        .scroll-reveal-right.revealed {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* ============================================
-           CONSTRUCTION BANNER
+           COMPONENTS
            ============================================ */
         .construction-banner {
             background-color: var(--gold);
@@ -226,25 +149,19 @@
             gap: 8px;
         }
 
-        .construction-banner i {
-            font-size: 1rem;
-        }
-
-        /* ============================================
-           HEADER
-           ============================================ */
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 40px; /* Ajustado por causa do banner */
+            left: 0; right: 0;
             z-index: 1000;
             background-color: var(--white);
             box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
         }
-
+        
+        /* Quando rolar, o header gruda no topo */
         .header.scrolled {
+            top: 0;
             box-shadow: var(--shadow-lg);
         }
 
@@ -263,635 +180,166 @@
             gap: 12px;
         }
 
-        .header-logo-icon {
-            width: 54px;
-            height: 54px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .header-logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-        .hero-logo {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 28px;
-            display: block;
-            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .footer-logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 24px;
-            display: block;
-        }
-
-        .footer-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        @media (max-width: 768px) {
-            .hero-logo {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 20px;
-            }
-            .header-logo-icon {
-                width: 44px;
-                height: 44px;
-            }
-            .footer-logo {
-                width: 80px;
-                height: 80px;
-            }
-        }
-
-        .header-logo-text {
-            display: flex;
-            flex-direction: column;
-        }
+        .header-logo-icon { width: 50px; height: 50px; }
 
         .header-logo-text span:first-child {
+            display: block;
             font-size: 1.25rem;
             font-weight: 800;
             color: var(--delta);
-            line-height: 1.2;
+            line-height: 1;
         }
 
         .header-logo-text span:last-child {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--gold);
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .header-nav a {
-            color: var(--gray-600);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .header-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .header-nav a:hover {
-            color: var(--delta);
-        }
-
-        .header-nav a:hover::after {
-            width: 100%;
-        }
-
-        .header-cta {
-            display: inline-block;
-            background-color: var(--gold);
-            color: var(--delta);
-            padding: 10px 24px;
-            border-radius: 50px;
             font-weight: 700;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .header-cta:hover {
-            background-color: var(--gold-hover);
-            transform: scale(1.05);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Mobile menu button */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            color: var(--delta);
-            font-size: 1.5rem;
-        }
-
-        /* Mobile nav */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 31, 63, 0.95);
-            z-index: 999;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-        }
-
-        .mobile-nav.active {
-            display: flex;
-        }
-
-        .mobile-nav a {
-            color: var(--white);
-            font-size: 1.25rem;
+        .header-nav { display: flex; gap: 25px; }
+        .header-nav a {
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: color 0.3s ease;
+            color: var(--gray-600);
+            transition: color 0.3s;
         }
+        .header-nav a:hover { color: var(--gold); }
 
-        .mobile-nav a:hover {
-            color: var(--gold);
-        }
-
-        .mobile-nav-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
+        /* HERO */
         .hero {
-            background: linear-gradient(rgba(0, 31, 63, 0.75), rgba(0, 31, 63, 0.75)),
-                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)),
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-repeat: no-repeat;
-            min-height: 600px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 20px 80px;
-            position: relative;
+            padding: 120px 20px 60px;
         }
 
-        .hero-content {
-            max-width: 800px;
-        }
-
+        .hero-logo { width: 120px; margin: 0 auto 20px; }
         .hero h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
             color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            max-width: 900px;
             margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease-out;
         }
+        .hero h1 span { color: var(--gold); }
+        .hero p { color: rgba(255,255,255,0.9); font-size: 1.2rem; margin-bottom: 40px; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
-        .hero h1 .gold {
-            color: var(--gold);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        /* ============================================
-           ABOUT SECTION
-           ============================================ */
-        .about {
-            padding: 100px 20px;
-            background-color: var(--gray-50);
-        }
-
+        /* ABOUT */
+        .about { padding: 100px 20px; background: var(--gray-50); }
         .about-inner {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .about-left h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--delta);
-            margin-bottom: 24px;
-            padding-left: 16px;
-            border-left: 4px solid var(--gold);
-            line-height: 1.3;
-        }
-
-        .about-left p {
-            font-size: 1rem;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        .about-badges {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            display: inline-flex;
+            gap: 50px;
             align-items: center;
-            gap: 8px;
-            background-color: rgba(0, 31, 63, 0.08);
-            color: var(--delta);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
         }
+        .about-left h2 { font-size: 2.2rem; color: var(--delta); margin-bottom: 20px; border-left: 5px solid var(--gold); padding-left: 15px; }
+        .about-card { background: var(--delta); color: var(--white); padding: 40px; border-radius: 15px; }
+        .about-card h3 { color: var(--gold); margin-bottom: 20px; }
+        .about-card-item { display: flex; gap: 15px; margin-bottom: 20px; }
+        .about-card-icon { color: var(--gold); font-size: 1.2rem; }
 
-        .badge i {
-            color: var(--gold);
-        }
-
-        .about-card {
-            background-color: var(--delta);
-            border-radius: 16px;
-            padding: 40px;
-            color: var(--white);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .about-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 28px;
-            color: var(--gold);
-        }
-
-        .about-card-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-            align-items: flex-start;
-        }
-
-        .about-card-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .about-card-icon {
-            width: 48px;
-            height: 48px;
-            min-width: 48px;
-            background-color: rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.1rem;
-        }
-
-        .about-card-item p {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           SERVICES SECTION
-           ============================================ */
-        .services {
-            padding: 100px 20px;
-            background-color: var(--white);
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .services-header h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--delta);
-            margin-bottom: 12px;
-        }
-
-        .services-header .gold-line {
-            width: 60px;
-            height: 4px;
-            background-color: var(--gold);
-            margin: 0 auto;
-            border-radius: 2px;
-        }
-
+        /* SERVICES */
+        .services { padding: 100px 20px; text-align: center; }
         .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 36px 24px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--gold);
-        }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            background-color: rgba(0, 31, 63, 0.06);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--gold);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            background-color: var(--delta);
-        }
-
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--delta);
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           FOOTER / CONTACT
-           ============================================ */
-        .footer {
-            background-color: var(--delta);
-            border-top: 4px solid var(--gold);
-            padding: 80px 20px 30px;
-            color: var(--white);
-        }
-
-        .footer-inner {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
             max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+            margin: 50px auto 0;
         }
-
-        .footer h2 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 32px;
-            color: var(--white);
+        .service-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            transition: 0.3s;
         }
+        .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); border-color: var(--gold); }
+        .service-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
 
+        /* FOOTER */
+        .footer { background: var(--delta); color: var(--white); padding: 80px 20px 40px; text-align: center; }
         .footer-whatsapp {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background-color: var(--gold);
+            background: var(--gold);
             color: var(--delta);
-            padding: 16px 36px;
+            padding: 15px 30px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin-bottom: 40px;
+            margin: 30px 0;
         }
 
-        .footer-whatsapp:hover {
-            background-color: var(--gold-hover);
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer-whatsapp i {
-            font-size: 1.3rem;
-        }
-
-        .footer-contact {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--gray-300);
-            font-size: 0.95rem;
-        }
-
-        .footer-contact-item i {
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
-        .footer-divider {
-            width: 100%;
-            height: 1px;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin-bottom: 24px;
-        }
-
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: var(--gray-500);
-        }
-
-        /* ============================================
-           FLOATING WHATSAPP BUTTON
-           ============================================ */
+        /* FLOATING WHATSAPP */
         .whatsapp-float {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 900;
-            width: 64px;
-            height: 64px;
-            background-color: var(--green-500);
+            bottom: 30px;
+            right: 30px;
+            background: var(--green-500);
+            color: white;
+            width: 60px; height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
-            transition: all 0.3s ease;
-            animation: bounce 2s ease-in-out infinite;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); background: var(--green-600); }
 
-        .whatsapp-float:hover {
-            background-color: var(--green-600);
-            transform: scale(1.1);
-            animation: none;
+        /* MOBILE MENU OVERLAY */
+        .menu-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: var(--delta); cursor: pointer; }
+        .mobile-nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--delta);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
         }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a { color: white; font-size: 1.5rem; font-weight: 600; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; background: none; border: none; }
 
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .header-nav,
-            .header-cta {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero {
-                background-attachment: scroll;
-                min-height: 500px;
-                padding: 100px 20px 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .about-inner {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-
-            .footer-contact {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .about-left h2 {
-                font-size: 1.5rem;
-            }
-
-            .services-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .footer h2 {
-                font-size: 1.35rem;
-            }
-
-            .about-card {
-                padding: 28px 20px;
-            }
+            .header-nav, .header-cta { display: none; }
+            .menu-toggle { display: block; }
+            .about-inner { grid-template-columns: 1fr; }
+            .header { top: 44px; }
+            .hero { background-attachment: scroll; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================
-         CONSTRUCTION BANNER
-         ============================================ -->
     <div class="construction-banner">
         <i class="fas fa-hard-hat"></i>
-        <span>Site em construção. Nossos serviços já estão disponíveis via WhatsApp!</span>
+        <span>Site em construção. Serviços disponíveis via WhatsApp!</span>
     </div>
 
-    <!-- ============================================
-         HEADER
-         ============================================ -->
     <header class="header" id="header">
         <div class="header-inner">
-            <!-- Logo -->
             <a href="#inicio" class="header-logo">
                 <div class="header-logo-icon">
-                    <img src="logo.png" alt="Delta Prime - Manutenção Condominial em João Pessoa">
+                    <img src="logo.png" alt="Delta Prime Logo">
                 </div>
                 <div class="header-logo-text">
                     <span>Delta Prime</span>
@@ -899,7 +347,6 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
             <nav class="header-nav">
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
@@ -907,281 +354,119 @@
                 <a href="#contato">Contato</a>
             </nav>
 
-            <!-- CTA Button -->
-            <a href="https://wa.me/5583998824850" target="_blank" rel="noopener noreferrer" class="header-cta">
-                Orçamento Rápido
-            </a>
+            <a href="https://wa.me/5583998824850" target="_blank" class="btn-gold header-cta" style="padding: 10px 20px;">Orçamento</a>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="menu-toggle" id="menuOpen" aria-label="Abrir Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav" id="mobileNav">
-        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <a href="#inicio" class="mobile-nav-link">Início</a>
-        <a href="#sobre" class="mobile-nav-link">Sobre</a>
-        <a href="#servicos" class="mobile-nav-link">Serviços</a>
-        <a href="#contato" class="mobile-nav-link">Contato</a>
-        <a href="https://wa.me/5583998824850" target="_blank" rel="noopener noreferrer" class="btn-gold" style="margin-top: 16px;">
-            Orçamento Rápido
-        </a>
+        <button class="mobile-nav-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        <a href="#inicio" class="m-link">Início</a>
+        <a href="#sobre" class="m-link">Sobre</a>
+        <a href="#servicos" class="m-link">Serviços</a>
+        <a href="#contato" class="m-link">Contato</a>
+        <a href="https://wa.me/5583998824850" class="btn-gold">WhatsApp</a>
     </div>
 
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <div class="hero-logo">
-                <img src="logo.png" alt="Delta Prime Logo">
-            </div>
-            <h1>EXCELÊNCIA EM <span class="gold">MANUTENÇÃO PREDIAL EM JOÃO PESSOA</span></h1>
-            <p>Soluções inteligentes para condomínios na Paraíba com o rigor técnico que seu patrimônio exige.</p>
-            <div class="hero-buttons">
-                <a href="#servicos" class="btn-gold">NOSSOS SERVIÇOS</a>
-                <a href="https://wa.me/5583998824850" target="_blank" rel="noopener noreferrer" class="btn-white">FALAR COM GESTOR</a>
+            <img src="logo.png" alt="Delta Prime Logo" class="hero-logo scroll-reveal">
+            <h1 class="scroll-reveal">EXCELÊNCIA EM <span>MANUTENÇÃO PREDIAL EM JOÃO PESSOA</span></h1>
+            <p class="scroll-reveal">Soluções inteligentes com o rigor técnico que seu patrimônio exige.</p>
+            <div class="hero-buttons scroll-reveal">
+                <a href="#servicos" class="btn-gold">Nossos Serviços</a>
+                <a href="https://wa.me/5583998824850" class="btn-white">Falar com Gestor</a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         ABOUT SECTION
-         ============================================ -->
     <section class="about" id="sobre">
         <div class="about-inner">
-            <!-- Left Column -->
-            <div class="about-left scroll-reveal">
+            <div class="about-left scroll-reveal-left">
                 <h2>Compromisso com seu Patrimônio</h2>
-                <p>A Delta Prime atua com uma equipe altamente qualificada para garantir que a infraestrutura do seu condomínio funcione sem interrupções, focando na segurança, durabilidade e valorização do imóvel em João Pessoa.</p>
-                <div class="about-badges">
-                    <div class="badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Atendimento Ágil</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Equipe Certificada</span>
-                    </div>
+                <p>A Delta Prime garante que a infraestrutura do seu condomínio funcione sem interrupções, focando na segurança e valorização do imóvel.</p>
+                <div style="display:flex; gap:10px; margin-top:20px;">
+                    <span style="background:#eee; padding:5px 15px; border-radius:20px; font-size:0.8rem; font-weight:700;">ÁGIL</span>
+                    <span style="background:#eee; padding:5px 15px; border-radius:20px; font-size:0.8rem; font-weight:700;">CERTIFICADA</span>
                 </div>
             </div>
-
-            <!-- Right Column - Card -->
             <div class="about-card scroll-reveal-right">
                 <h3>Por que nos escolher?</h3>
                 <div class="about-card-item">
-                    <div class="about-card-icon">
-                        <i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <p>Relatórios fotográficos detalhados após cada serviço realizado.</p>
+                    <i class="fas fa-clipboard-check about-card-icon"></i>
+                    <p>Relatórios fotográficos detalhados após cada serviço.</p>
                 </div>
                 <div class="about-card-item">
-                    <div class="about-card-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <p>Uso rigoroso de materiais de primeira linha e normas ABNT.</p>
-                </div>
-                <div class="about-card-item">
-                    <div class="about-card-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <p>Transparência total em orçamentos, prazos e cronogramas.</p>
+                    <i class="fas fa-shield-alt about-card-icon"></i>
+                    <p>Materiais de primeira linha e normas ABNT.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         SERVICES SECTION
-         ============================================ -->
     <section class="services" id="servicos">
-        <div class="services-header scroll-reveal">
-            <h2>Nossas Especialidades</h2>
-            <div class="gold-line"></div>
-        </div>
+        <h2 class="scroll-reveal">Nossas Especialidades</h2>
         <div class="services-grid">
-            <!-- Elétrica -->
             <div class="service-card scroll-reveal">
-                <div class="service-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
+                <i class="fas fa-bolt service-icon"></i>
                 <h3>Elétrica</h3>
-                <p>Quadros de comando, bombas hidráulicas e iluminação LED eficiente.</p>
+                <p>Quadros de comando e iluminação LED eficiente.</p>
             </div>
-            <!-- Hidráulica -->
             <div class="service-card scroll-reveal">
-                <div class="service-icon">
-                    <i class="fas fa-faucet"></i>
-                </div>
+                <i class="fas fa-faucet service-icon"></i>
                 <h3>Hidráulica</h3>
-                <p>Manutenção de colunas, barriletes e correção de infiltrações.</p>
+                <p>Manutenção de colunas e correção de infiltrações.</p>
             </div>
-            <!-- Pintura/Fachada -->
             <div class="service-card scroll-reveal">
-                <div class="service-icon">
-                    <i class="fas fa-paint-roller"></i>
-                </div>
-                <h3>Pintura/Fachada</h3>
-                <p>Restauração predial, lavagem e pintura profissional de fachadas.</p>
-            </div>
-            <!-- Zeladoria -->
-            <div class="service-card scroll-reveal">
-                <div class="service-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3>Zeladoria</h3>
-                <p>Pequenos reparos e contratos de manutenção preventiva periódica.</p>
+                <i class="fas fa-paint-roller service-icon"></i>
+                <h3>Fachada</h3>
+                <p>Restauração, lavagem e pintura profissional.</p>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER / CONTACT
-         ============================================ -->
     <footer class="footer" id="contato">
-        <div class="footer-inner">
-            <div class="footer-logo scroll-reveal">
-                <img src="logo.png" alt="Delta Prime Logo">
-            </div>
-            <h2 class="scroll-reveal">Solicite uma Visita Técnica</h2>
-
-            <a href="https://wa.me/5583998824850" target="_blank" rel="noopener noreferrer" class="footer-whatsapp scroll-reveal">
-                <i class="fab fa-whatsapp"></i>
-                <span>(83) 9 9882-4850</span>
-            </a>
-
-            <div class="footer-contact scroll-reveal">
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4125242d35202c202f3435242f222e243270737601262c20282d6f222e2c">[email&#160;protected]</a></span>
-                </div>
-                <div class="footer-contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>João Pessoa - PB</span>
-                </div>
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <p class="footer-copyright">
-                &copy; 2026 Delta Prime Manutenções Condominiais LTDA. Todos os direitos reservados.
-            </p>
+        <h2 class="scroll-reveal">Solicite uma Visita Técnica</h2>
+        <a href="https://wa.me/5583998824850" class="footer-whatsapp scroll-reveal">
+            <i class="fab fa-whatsapp"></i> (83) 9 9882-4850
+        </a>
+        <p class="scroll-reveal">João Pessoa - Paraíba</p>
+        <div style="margin-top:40px; opacity:0.5; font-size:0.8rem;">
+            &copy; 2026 Delta Prime Manutenções. Todos os direitos reservados.
         </div>
     </footer>
 
-    <!-- ============================================
-         FLOATING WHATSAPP BUTTON
-         ============================================ -->
-    <a href="https://wa.me/5583998824850" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato via WhatsApp">
+    <a href="https://wa.me/5583998824850" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ============================================
-         JAVASCRIPT
-         ============================================ -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // ============================================
-        // Header scroll effect
-        // ============================================
-        (function() {
-            var header = document.getElementById('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
+    <script>
+        // Menu Mobile
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('mobileClose');
+        const mobileNav = document.getElementById('mobileNav');
+        const mLinks = document.querySelectorAll('.m-link');
+
+        menuOpen.onclick = () => mobileNav.classList.add('active');
+        menuClose.onclick = () => mobileNav.classList.remove('active');
+        mLinks.forEach(link => link.onclick = () => mobileNav.classList.remove('active'));
+
+        // Header Scroll
+        window.onscroll = () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        };
+
+        // Intersection Observer para Animações
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
             });
-        })();
+        }, { threshold: 0.1 });
 
-        // ============================================
-        // Mobile menu toggle
-        // ============================================
-        (function() {
-            var menuToggle = document.getElementById('menuToggle');
-            var mobileNav = document.getElementById('mobileNav');
-            var mobileNavClose = document.getElementById('mobileNavClose');
-            var mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-            menuToggle.addEventListener('click', function() {
-                mobileNav.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-
-            mobileNavClose.addEventListener('click', function() {
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            mobileLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    mobileNav.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-        })();
-
-        // ============================================
-        // Scroll reveal animation
-        // ============================================
-        (function() {
-            var revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
-
-            function checkReveal() {
-                var windowHeight = window.innerHeight;
-                revealElements.forEach(function(el) {
-                    var elementTop = el.getBoundingClientRect().top;
-                    var revealPoint = windowHeight - 100;
-                    if (elementTop < revealPoint) {
-                        el.classList.add('revealed');
-                    }
-                });
-            }
-
-            // Check on load
-            checkReveal();
-
-            // Check on scroll (throttled)
-            var ticking = false;
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        checkReveal();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-        })();
-
-        // ============================================
-        // Smooth scroll for anchor links (fallback)
-        // ============================================
-        (function() {
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    var targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    var target = document.querySelector(targetId);
-                    if (target) {
-                        e.preventDefault();
-                        var headerHeight = document.querySelector('.header').offsetHeight;
-                        var bannerHeight = document.querySelector('.construction-banner').offsetHeight;
-                        var offset = headerHeight + bannerHeight + 10;
-                        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        })();
+        document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
